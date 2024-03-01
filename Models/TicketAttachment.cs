@@ -41,6 +41,6 @@ namespace IssueHub.Models
 
         // Navigation Properties
         public virtual Ticket Ticket { get; set; }
-        public virtual BTUser User { get; set; }
+        public virtual IssueHubUser User { get; set; }
     }
 }
