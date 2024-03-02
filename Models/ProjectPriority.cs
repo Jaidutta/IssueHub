@@ -8,12 +8,8 @@ namespace IssueHub.Models
         public int Id { get; set; }
 
    
-        [DisplayName("Project Priority")]
+        [DisplayName("Priority Name")]
         public string Name { get; set; }
 
-
-        // Navigation property
-
-        public Project Project { get; set; }
     }
 }

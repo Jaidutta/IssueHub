@@ -3,7 +3,7 @@ using System.Net.Sockets;
 
 namespace IssueHub.Models
 {
-    public class TIcketHistory
+    public class TicketHistory
     {
         public int Id { get; set; }
 
@@ -29,7 +29,7 @@ namespace IssueHub.Models
 
 
         [DisplayName("Team Member")]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         // Navigation Properties
         public virtual Ticket Ticket { get; set; }

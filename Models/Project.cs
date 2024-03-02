@@ -44,10 +44,10 @@ namespace IssueHub.Models
 
 
         [DisplayName("File Name")]
-        public string FileName { get; set; }
+        public string ImageFileName { get; set; }
 
 
-        public byte[] FileData { get; set; } // bytestream of a physical file
+        public byte[] ImageFileData { get; set; } // bytestream of a physical file
 
 
         [DisplayName("File Extension")]

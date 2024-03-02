@@ -9,6 +9,10 @@ namespace IssueHub.Models
 {
     public class IssueHubUser: IdentityUser
     {
+        [Key]
+        public string Id { get; set; }
+
+
         [Required]
         [Display(Name = "First Name")] 
         public string FirstName { get; set; }
@@ -41,7 +45,7 @@ namespace IssueHub.Models
         [DisplayName("Avatar")]
         public string AvatarFileName { get; set; }
 
-        public byte[] FileData { get; set; }
+        public byte[] AvatarFileData { get; set; }
 
 
         public int? CompanyId { get; set; }

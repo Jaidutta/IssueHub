@@ -28,7 +28,7 @@ namespace IssueHub.Models
 
 
         [DataType(DataType.Date)]
-        [DisplayName("Message")]
+        [DisplayName("Date")]
         public DateTimeOffset Created { get; set; }
 
 
