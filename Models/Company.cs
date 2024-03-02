@@ -20,5 +20,8 @@ namespace IssueHub.Models
         public virtual ICollection<IssueHubUser> Members { get; set; }
 
         public virtual ICollection<Project> Projects { get; set; }
+
+
+        // Create a relationship to  invite
     }
 }
