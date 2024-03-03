@@ -1,5 +1,7 @@
 using IssueHub.Data;
 using IssueHub.Models;
+using IssueHub.Services;
+using IssueHub.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +18,10 @@ builder.Services.AddIdentity<IssueHubUser, IdentityRole>(options => options.Sign
     .AddDefaultUI()
     .AddDefaultTokenProviders();
 builder.Services.AddControllersWithViews();
+
+// --- IssueHub Services ---
+// Roles Services
+builder.Services.AddScoped<IIssueHubRolesService, IssueHubRolesService>();
 
 var app = builder.Build();
 
