@@ -1,6 +1,6 @@
 ﻿using IssueHub.Models;
 
-namespace IssueHub.Services
+namespace IssueHub.Services.Interfaces
 {
     public interface IIssueHubRolesService
     {
@@ -11,7 +11,7 @@ namespace IssueHub.Services
 
         public Task<bool> AddUserToRoleAsync(IssueHubUser user, string roleName);
 
-        
+
         // Remove user from a single role
         public Task<bool> RemoveUserFromRoleAsync(IssueHubUser user, string roleName);
 
