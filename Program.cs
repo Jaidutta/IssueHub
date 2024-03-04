@@ -23,6 +23,9 @@ builder.Services.AddControllersWithViews();
 // Roles Services
 builder.Services.AddScoped<IIssueHubRolesService, IssueHubRolesService>();
 
+// CompanyInfo Services
+builder.Services.AddScoped<IIssueHubCompanyInfoService, IssueHubCompanyInfoService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

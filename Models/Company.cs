@@ -23,5 +23,8 @@ namespace IssueHub.Models
 
 
         // Create a relationship to  invite
+
+        public virtual ICollection<Invite>Invites { get; set; }
+
     }
 }
