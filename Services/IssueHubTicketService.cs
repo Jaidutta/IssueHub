@@ -99,19 +99,46 @@ namespace IssueHub.Services
             throw new NotImplementedException();
         }
 
-        public Task<int?> LookupTicketPriorityIdAsync(string priorityName)
+        // All these lookup methods are helper methods that will give us the Ids when we provide various input
+
+        // The nullable int return value means we may find the Id, we may NOT
+        public async Task<int?> LookupTicketPriorityIdAsync(string priorityName)
         {
-            throw new NotImplementedException();
+            try
+            {
+                TicketPriority priority = await _context.TicketPriorities.FirstOrDefaultAsync(p => p.Name == priorityName);
+                return priority?.Id;
+            }
+            catch 
+            {
+                throw;
+            }
         }
 
-        public Task<int?> LookupTicketStatusIdAsync(string statusName)
+        public async Task<int?> LookupTicketStatusIdAsync(string statusName)
         {
-            throw new NotImplementedException();
+            try
+            {
+                TicketStatus status = await _context.TicketStatuses.FirstOrDefaultAsync(s => s.Name == statusName);
+                return status?.Id;
+            }
+            catch
+            {
+                throw;
+            }
         }
 
-        public Task<int?> LookupTicketTypeIdAsync(string typeName)
+        public async Task<int?> LookupTicketTypeIdAsync(string typeName)
         {
-            throw new NotImplementedException();
+            try
+            {
+                TicketType type = await _context.TicketType.FirstOrDefaultAsync(type => type.Name == typeName);
+                return type?.Id;
+            }
+            catch
+            {
+                throw;
+            }
         }
 
 
