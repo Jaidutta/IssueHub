@@ -29,6 +29,8 @@ namespace IssueHub.Services
         public async Task<List<Project>> GetAllProjectsAsync(int companyId)
         {
             List<Project> result = new();
+            
+            // It is a different way of fetching information --> a different pattern
             result = await _context.Projects.Where(p => p.CompanyId == companyId)
                                    .Include(p => p.ProjectPriority)
                                    .Include(p => p.Members)

@@ -19,12 +19,17 @@ builder.Services.AddIdentity<IssueHubUser, IdentityRole>(options => options.Sign
     .AddDefaultTokenProviders();
 builder.Services.AddControllersWithViews();
 
+///***********************************CUSTOM SERVICES********************************
+
 // --- IssueHub Services ---
 // Roles Services
 builder.Services.AddScoped<IIssueHubRolesService, IssueHubRolesService>();
 
 // CompanyInfo Services
 builder.Services.AddScoped<IIssueHubCompanyInfoService, IssueHubCompanyInfoService>();
+
+// Project Services
+builder.Services.AddScoped<IIssueHubProjectService,  IssueHubProjectService>();
 
 var app = builder.Build();
 
