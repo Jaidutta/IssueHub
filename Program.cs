@@ -31,6 +31,9 @@ builder.Services.AddScoped<IIssueHubCompanyInfoService, IssueHubCompanyInfoServi
 // Project Services
 builder.Services.AddScoped<IIssueHubProjectService,  IssueHubProjectService>();
 
+// Ticket Services
+builder.Services.AddScoped<IIssueHubTicketService, IssueHubTicketService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
