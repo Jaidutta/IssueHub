@@ -3,6 +3,7 @@ using IssueHub.Models;
 using IssueHub.Services;
 using IssueHub.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -36,6 +37,10 @@ builder.Services.AddScoped<IIssueHubTicketService, IssueHubTicketService>();
 
 // TicketHistory Services
 builder.Services.AddScoped<IIssueHubTicketHistoryService, IssueHubTicketHistoryService>();
+
+// Email Services
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+builder.Services.AddScoped<IEmailSender, IssueHubEmailService>();
 
 var app = builder.Build();
 
