@@ -40,7 +40,17 @@ builder.Services.AddScoped<IIssueHubTicketHistoryService, IssueHubTicketHistoryS
 
 // Email Services
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
-builder.Services.AddScoped<IEmailSender, IssueHubEmailService>();
+builder.Services.AddScoped<IEmailSender, IssueHubEmailService>(); // IEmailSender was not created by us
+
+
+// Notification Services
+builder.Services.AddScoped<IIssueHubNotificationService, IssueHubNotificationService>();
+
+// Invite Services
+builder.Services.AddScoped<IIssueHubInviteService, IssueHubInviteService>();
+
+// File Service
+builder.Services.AddScoped<IIssueHubFileService, IssueHubFileService>();
 
 var app = builder.Build();
 
